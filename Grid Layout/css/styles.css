@@ -1,0 +1,56 @@
+body{
+	font-family: Arial;
+}
+
+.container{
+	display: grid;
+	/*grid-template-columns: 25% 200px 25%;
+	grid-template-rows: 300px 300px;*/
+	/*grid-template: filas / columnas*/
+	/*fr*/
+	grid-template:  100px 1fr 150px/ 200px 1fr;
+	/*grid-gap: filas / columnas;*/
+	grid-gap: 10px;
+	height: 100vh; /*view por high*/
+	grid-template-areas: "header header" 
+						 "left contenido"
+						 "footer footer";
+}
+
+.item{
+	background-color: lightblue;
+	padding: 10px;
+	border: 1px solid red;
+	
+} 
+
+/*se creó un grid dentro de otro grid
+		"SUB-GRID"*/
+.item:nth-of-type(4){
+	background-color: blue;
+	/*genera un auto scroll al momento d ecargar la pagina*/
+	overflow: auto;
+	/*display: subgrid; //Copias la configuracion del main grid container*/
+	display: grid; 
+	grid-template: 50px 50px 50px / 200px 200px 200px;
+}
+
+.item .item{
+	background-color: yellow;
+}
+
+.header{
+	grid-area: header;
+}
+
+.left{
+	grid-area: left;
+}
+
+.contenido{
+	grid-area: contenido;
+}
+
+.footer{
+	grid-area: footer;
+}
